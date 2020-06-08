@@ -21,6 +21,9 @@ def empty_folder(path):
         for d in dirs:
             shutil.rmtree(os.path.join(root, d))
 
+    os.rmdir(path)
+
+
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
@@ -28,6 +31,10 @@ def index():
         filename = uploaded_file.filename
         if filename != '':
             if uploaded_file.filename[-3:] in ['zip']:
+
+                if not os.path.isdir(OUTPUT_DIR):
+                    os.mkdir(OUTPUT_DIR)
+
                 image_path = os.path.join(OUTPUT_DIR, filename)
                 uploaded_file.save(image_path)
 
