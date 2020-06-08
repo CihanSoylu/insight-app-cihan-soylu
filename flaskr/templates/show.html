@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+          <title>BrainCAM</title>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+          <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+          <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    </head>
+
+    <body>
+          <div class="container">
+              <h1>Prediction: {{ diagnosis }} ({{ prediction }})</h1>
+              <hr>
+              <hr>
+              <a href = "{{ url_for('index') }}" class="btn btn-default">Go Back</a>
+          </div>
+          <div id='divPlotly'></div>
+          <script type="text/javascript">
+              var plotly_data = {{plot_json | safe}};
+              Plotly.react('divPlotly', plotly_data.data, plotly_data.layout);
+          </script>
+    </body>
+
+</html>
