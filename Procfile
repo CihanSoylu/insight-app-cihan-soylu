@@ -1,1 +1,1 @@
-web:sh setup.sh && ./run.py
+web: sh setup.sh && ./run.py
