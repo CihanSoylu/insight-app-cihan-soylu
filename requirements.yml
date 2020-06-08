@@ -1,4 +1,4 @@
-name: ad
+name: brain-cam
 channels:
   - intel
   - anaconda
@@ -184,4 +184,3 @@ dependencies:
     - watchdog==0.10.2
     - wrapt==1.12.1
 prefix: /opt/anaconda3/envs/ad
-
