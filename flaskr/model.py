@@ -1,5 +1,4 @@
 import tensorflow as tf
-from PIL import Image
 import io
 import numpy as np
 import pandas as pd
